@@ -7,6 +7,6 @@
 - Install other packaeges using ```requirements.txt``` provided in this folder: ```pip install -r requirements.txt```
 
 - Go to ```config.py```, and fill in the value of ```MODEL_SAVE``` with the path where the models were saved. Please notice this path should not contain the name of the models. 
-The model file usuallyhas two parts: a ```.bin``` file and ```config.json```. For example, if these two files have the following absolute path: ```path/to/examples/model1/mode.bin``` and ```path/to/examples/model1/config.json```, then the value of ```MODEL_SAVE``` should be ```path/to/examples/```
+The models usually have two parts: a ```.bin``` file and ```config.json```. For example, if these two files have the following absolute path: ```path/to/examples/model1/mode.bin``` and ```path/to/examples/model1/config.json```, then the value of ```MODEL_SAVE``` should be ```path/to/examples/```
 
 - Now you can run TPP as normal

@@ -2,7 +2,7 @@
 
 ### Please firstly install packages for running NegBERT:
 
-- install ```pytorch```: the compatibility of pytorch is as tricky as always. Please [check your CUDA version first](https://stackoverflow.com/questions/9727688/how-to-get-the-cuda-version), and using the command that correspondes to your CUDA version on [this page](https://pytorch.org/get-started/previous-versions/) provided by PyTorch official. ```pytorch 1.12.1``` has been tested, so versions that are lower than that should be working fine.
+- install ```pytorch```: the compatibility of pytorch is as tricky as always. Please [check your CUDA version first](https://stackoverflow.com/questions/9727688/how-to-get-the-cuda-version), and use the command that correspondes to your CUDA version on [this page](https://pytorch.org/get-started/previous-versions/) provided by PyTorch official. ```pytorch 1.12.1``` has been tested, so versions that are lower than that should be working fine.
 
 - Install other packaeges using ```requirements.txt``` provided in this folder: ```pip install -r requirements.txt```
 

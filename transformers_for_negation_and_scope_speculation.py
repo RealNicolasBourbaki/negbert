@@ -3083,7 +3083,7 @@ class CueModel:
         else:
             # self.model = torch.load(pretrained_model_path)
             # self.model.load_state_dict(torch.load(pretrained_model_path))
-            self.model = BertForTokenClassification.from_pretrained(pretrained_model_path, num_labels=num_labels)
+            self.model = BertForTokenClassification.from_pretrained(pretrained_model_path, num_labels=num_labels, local_files_only=True)
             # self.model.load_state_dict(torch.load(pretrained_model_path))
         self.device = torch.device(device)
         self.class_weight = class_weight

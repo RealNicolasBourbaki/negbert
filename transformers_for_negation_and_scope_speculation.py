@@ -38,9 +38,6 @@ from scipy import stats
 import tensorflow as tf
 import numpy as np
 
-from config import SENT_FILE, CUES_PRED, SCOPE_PRED, MODEL_SAVE, BERT_CONFIG, XNET_CONFIG, SHERLOCK_DEV, SHERLOCK_TRAIN, \
-    SHERLOCK_TEST_CIRCLE, SHERLOCK_TEST_CARDBOARD
-
 nltk.download('punkt')
 
 """Global variables for model configuration."""
@@ -951,14 +948,13 @@ sfu_data = Data('/content/gdrive/My Drive/path_to_file', dataset_name='sfu')
 bioscope_abstracts_data = Data('/content/gdrive/My Drive/path_to_file', dataset_name='bioscope')
 """
 
+'''
 if TASK == 'negation':
     sherlock_train_data = Data(SHERLOCK_TRAIN, dataset_name='starsem')
     sherlock_dev_data = Data(SHERLOCK_DEV, dataset_name='starsem')
     sherlock_test_gold_cardboard_data = Data(SHERLOCK_TEST_CARDBOARD, dataset_name='starsem')
     sherlock_test_gold_circle_data = Data(SHERLOCK_TEST_CIRCLE, dataset_name='starsem')
-
-"""Class Definitions: Model Code (Taken from [Huggingface's transformers library](https://github.com/huggingface/transformers))"""
-
+'''
 
 def load_tf_weights_in_bert(model, config, tf_checkpoint_path):
     """ Load tf checkpoints in a pytorch model.

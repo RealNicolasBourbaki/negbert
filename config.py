@@ -7,3 +7,4 @@ SHERLOCK_TRAIN = "dataset/SEM-2012-SharedTask-CD-SCO-training.txt"
 SHERLOCK_DEV = "dataset/SEM-2012-SharedTask-CD-SCO-dev.txt"
 SHERLOCK_TEST_CARDBOARD = "dataset/SEM-2012-SharedTask-CD-SCO-test-cardboard-GOLD.txt"
 SHERLOCK_TEST_CIRCLE = "dataset/SEM-2012-SharedTask-CD-SCO-test-circle-GOLD.txt"
+

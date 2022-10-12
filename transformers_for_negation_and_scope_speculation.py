@@ -3853,9 +3853,7 @@ class ScopeModel:
         return predictions
 
 
-def sentence_reader(file):
+def sentence_reader(line):
     tokenized_sents = []
-    with open(file, "r", encoding="utf8") as f:
-        for line in f:
-            tokenized_sents.append(" ".join(word_tokenize(line)))
+    tokenized_sents.append(" ".join(word_tokenize(line)))
     return tokenized_sents

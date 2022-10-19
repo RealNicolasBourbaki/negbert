@@ -1,5 +1,7 @@
 # negbert + TPP intergration
 
+Negation detection with BERT
+
 ### Please firstly install packages for running NegBERT:
 
 - install ```pytorch```: the compatibility of pytorch is as tricky as always. 

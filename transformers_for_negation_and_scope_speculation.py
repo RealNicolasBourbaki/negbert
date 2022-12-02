@@ -3839,6 +3839,4 @@ class ScopeModel:
 
 
 def sentence_reader(line):
-    tokenized_sents = []
-    tokenized_sents.append(" ".join(word_tokenize(line)))
-    return tokenized_sents
+    return word_tokenize(line)

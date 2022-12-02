@@ -102,14 +102,15 @@ class TPP:
         scopes = scp_model.predict(data)
 
         these_cues, these_scopes = [], []
-        for word, cue, scope in zip(tokenized_sent, cues[0], scopes):
-            if cue != "3":
+        for word, cue, scope in zip(tokenized_sent, cues, scopes[0]):
+            if cue[0] != 3:
                 these_cues.append(word)
-            if scope == "1":
+            if scope[0] == 1:
                 these_scopes.append(word)
 
-        return "sentence: " + tokenized_sent[0] + "\t cues: " + " ".join(these_cues) + "\t scopes: " + " ".join(
-            these_scopes)
+        return "sentence: " + " ".join(tokenized_sent) + "\t cues: " + " ".join(these_cues) + "\t scopes: " + " ".join(these_scopes)
+
+
 
     """
     TPP library call to write a file (in outputDir) which will contain output
@@ -223,6 +224,10 @@ if __name__ == '__main__':
         #     outputDir += "\\"
     print(tpp.moduleId + "<>" + tpp.inputDir + "<>" + tpp.outputDir)
 
+    from transformers_for_negation_and_scope_speculation import CueModel, ScopeModel
+    cue_model = CueModel(full_finetuning=True, train=False, pretrained_model_path=MODEL_SAVE + "Cue_Detection2.pickle/")
+    scp_model = ScopeModel(full_finetuning=True, train=False, pretrained_model_path=MODEL_SAVE + "Scope_Resolution_Augment2.pickle/")
+    
     print('Reading config file')
     tpp.config_read()
 
@@ -232,13 +237,6 @@ if __name__ == '__main__':
         readStatus = tpp.tpp_busy_read(tpp.inputDir)
         if readStatus.status == SUCCESS:
             print('main: read SUCCESS')
-            from transformers_for_negation_and_scope_speculation import CueModel, ScopeModel
-
-            cue_model = CueModel(full_finetuning=True, train=False,
-                                 pretrained_model_path=MODEL_SAVE + "Cue_Detection2.pickle/")
-
-            scp_model = ScopeModel(full_finetuning=True, train=False,
-                                   pretrained_model_path=MODEL_SAVE + "Scope_Resolution_Augment2.pickle/")
 
             output = tpp.work(readStatus.input)
             writeStatus = tpp.tpp_write(output, tpp.outputDir)

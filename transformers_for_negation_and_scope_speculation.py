@@ -32,7 +32,6 @@ import nltk
 from nltk.tokenize import word_tokenize
 import pandas as pd
 from tqdm import tqdm
-import matplotlib.pyplot as plt
 # %matplotlib inline
 from scipy import stats
 import tensorflow as tf
@@ -3272,13 +3271,6 @@ class CueModel:
             print("F1-Score Cue_No Cue: {}".format(f1_score(labels_flat, pred_flat, average='weighted')))
 
         self.model.load_state_dict(torch.load('checkpoint.pt'))
-        plt.xlabel("Iteration")
-        plt.ylabel("Train Loss")
-        plt.plot([i for i in range(len(train_loss))], train_loss)
-        plt.figure()
-        plt.xlabel("Iteration")
-        plt.ylabel("Validation Loss")
-        plt.plot([i for i in range(len(valid_loss))], valid_loss)
         return return_dict
 
     # @telegram_sender(token=TELEGRAM_TOKEN, chat_id=TELEGRAM_CHAT_ID)
@@ -3657,13 +3649,6 @@ class ScopeModel:
                 break
 
         self.model.load_state_dict(torch.load('checkpoint.pt'))
-        plt.xlabel("Iteration")
-        plt.ylabel("Train Loss")
-        plt.plot([i for i in range(len(train_loss))], train_loss)
-        plt.figure()
-        plt.xlabel("Iteration")
-        plt.ylabel("Validation Loss")
-        plt.plot([i for i in range(len(valid_loss))], valid_loss)
         return return_dict
 
     # @telegram_sender(token=TELEGRAM_TOKEN, chat_id=TELEGRAM_CHAT_ID)

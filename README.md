@@ -18,3 +18,5 @@ For example, if these two files have the following absolute path: ```path/to/exa
 and ```path/to/examples/model1/config.json```, then the value of ```MODEL_SAVE``` should be ```path/to/examples/```
 
 - Now you can run TPP as normal
+
+- Tested on Windows 10 pro and Ubuntu 20.04 LTS
